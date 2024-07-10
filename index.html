@@ -73,13 +73,15 @@
         }
         .chat-body {
             flex: 1;
-            overflow-y: scroll;
+            overflow-y: hidden;
+            padding: 0;
+            margin: 0;
             background-color: #f0f0f0;
-            padding: 10px;
         }
         .chat-body img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
         }
         .back-arrow {
             cursor: pointer;
