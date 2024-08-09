@@ -100,15 +100,14 @@
             font-size: 24px;
         }
     </style>
-    <!-- Link to Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div id="hub">
         <h1>Mensagens novas!</h1>
-        <button onclick="openChat('chat1')">Maurício</button>
-        <button onclick="openChat('chat2')">Grupo dos Pais</button>
-        <button onclick="openChat('chat3')">Grupo de Alunos</button>
+        <button onclick="openChat('chat1', 'Mauricio')">Maurício</button>
+        <button onclick="openChat('chat2', 'GrupoDosPais')">Grupo dos Pais</button>
+        <button onclick="openChat('chat3', 'GrupoDeAlunos')">Grupo de Alunos</button>
     </div>
 
     <div id="chat1" class="chat">
@@ -156,17 +155,17 @@
         </div>
     </div>
 
-
-    
     <script>
-        function openChat(chatId) {
+        function openChat(chatId, chatName) {
             document.getElementById('hub').style.display = 'none';
             document.getElementById(chatId).style.display = 'flex';
+            history.pushState(null, '', `#${chatName}`);
         }
 
         function goBack() {
             document.querySelectorAll('.chat').forEach(chat => chat.style.display = 'none');
             document.getElementById('hub').style.display = 'flex';
+            history.pushState(null, '', '#');
         }
     </script>
 </body>
