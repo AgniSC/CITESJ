@@ -167,6 +167,19 @@
             document.getElementById('hub').style.display = 'flex';
             history.pushState(null, '', '#');
         }
+
+        window.onload = function() {
+            const hash = window.location.hash.substring(1);
+            if (hash) {
+                if (hash === 'Mauricio') {
+                    openChat('chat1', hash);
+                } else if (hash === 'GrupoDosPais') {
+                    openChat('chat2', hash);
+                } else if (hash === 'GrupoDeAlunos') {
+                    openChat('chat3', hash);
+                }
+            }
+        }
     </script>
 </body>
 </html>
